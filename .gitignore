@@ -1,0 +1,13 @@
+.DS_Store
+.DerivedData/
+.swift-module-cache/
+
+node_modules/
+.next/
+
+.env
+.env.local
+.env.*.local
+
+dist/
+build/
