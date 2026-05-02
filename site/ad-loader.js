@@ -29,7 +29,10 @@
   }
 
   function loadAdsenseScript(adClient) {
-    if (document.querySelector('script[data-shiritori-adsense="true"]')) {
+    if (
+      document.querySelector('script[data-shiritori-adsense="true"]') ||
+      document.querySelector('script[src*="adsbygoogle.js"]')
+    ) {
       return;
     }
 

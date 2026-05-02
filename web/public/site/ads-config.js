@@ -1,5 +1,5 @@
 window.SHITORI_ADS = {
-  client: "",
+  client: "ca-pub-4676746723864981",
   nativeSlot: "",
   bannerSlot: ""
 };
