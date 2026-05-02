@@ -22,6 +22,7 @@ const WORD_ALIASES = {};
 const SMALL_KANA = new Set(["ゃ", "ゅ", "ょ", "ぁ", "ぃ", "ぅ", "ぇ", "ぉ", "っ"]);
 const SOLO_LIMIT_SECONDS = 60;
 const BATTLE_LIMIT_SECONDS = 60;
+const SOLO_CHAIN_BONUS = 30;
 const MAX_LEARNED_WORDS = 2000;
 const STORAGE_KEY = "shiritori-battle-rooms";
 const CHANNEL_NAME = "shiritori-battle-channel";
@@ -301,7 +302,7 @@ async function submitSoloWord(event) {
     return;
   }
 
-  const earnedPoints = calculatePoints(acceptedWord);
+  const earnedPoints = calculatePoints(acceptedWord) + SOLO_CHAIN_BONUS;
   state.solo.score += earnedPoints;
   state.solo.usedWords.add(acceptedWord);
   rememberWord(acceptedWord);
