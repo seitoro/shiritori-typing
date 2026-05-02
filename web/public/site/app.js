@@ -23,7 +23,6 @@ const SMALL_KANA = new Set(["ゃ", "ゅ", "ょ", "ぁ", "ぃ", "ぅ", "ぇ", "�
 const SOLO_LIMIT_SECONDS = 60;
 const BATTLE_LIMIT_SECONDS = 60;
 const SOLO_CHAIN_BONUS = 30;
-const MAX_LEARNED_WORDS = 2000;
 const STORAGE_KEY = "shiritori-battle-rooms";
 const CHANNEL_NAME = "shiritori-battle-channel";
 const STARTER_WORD_SET = new Set(STARTER_WORDS.map((word) => normalizeWord(word)).filter(Boolean));
@@ -712,7 +711,7 @@ function compactLearnedWords(words) {
     normalizedWords.push(normalized);
   }
 
-  return normalizedWords.slice(-MAX_LEARNED_WORDS);
+  return normalizedWords;
 }
 
 function scheduleDictionarySave() {
